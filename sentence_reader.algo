@@ -1,0 +1,37 @@
+
+/*At this checkpoint, you are asked to write an algorithm that read a sentence, which ends with a point, character by character, and to determine:
+Instructions
+The length of the sentence (the number of characters).
+The number of words in the sentence (assuming that the words are separated by a single space).
+The number of vowels in the sentence.
+You have to keep in mind that: 
+Each character will be treated separately.
+The last character is the point.
+Use three variables as counters.*/
+
+
+ALGORITHM sentence_reader
+VAR
+    charCount,wordCount,vowelCount, i: INTEGER := 0;
+    sentence: STRING;
+BEGIN
+    Read(sentence)
+
+    FOR i FROM 0 TO sentenceLength STEP step  DO 
+        IF (sentence[i] <> ".") THEN
+            charCount := charCount + 1
+        ELSE
+           charCount := charCount + 1 //adding the "." count 
+        END_IF
+        IF (sentence[i] = " ") THEN
+            wordCount := wordCount + 1
+        END_IF
+        IF (sentence[i] = "a" OR sentence[i] = "e" OR sentence[i] = "i" OR sentence[i] = "o" OR sentence[i] = "u"
+            OR sentence[i] = "A" OR sentence[i] = "E" OR sentence[i] = "I" OR sentence[i] = "O" OR sentence[i] = "U" ) THEN
+            vowelCount := vowelCount + 1
+        END_IF
+    END_FOR
+    
+    Write (charCount,wordCount,vowelCount)
+END
+
